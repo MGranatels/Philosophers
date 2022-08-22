@@ -3,15 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/22 11:57:13 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/22 15:11:32 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef _PHILO_H
-# define _PHILO_H
+#ifndef	 PHILO_H
+# define PHILO_H
 
 # include <pthread.h>
 # include <stdlib.h>
@@ -19,7 +19,7 @@
 # include <sys/time.h>
 # include <stdio.h>
 
-typedef enum		e_state
+typedef enum e_state
 {
 	EATING,
 	SLEEPING,
@@ -28,7 +28,7 @@ typedef enum		e_state
 	FINISHED
 }					t_state;
 
-typedef	struct		s_philo
+typedef struct s_philo
 {
 	int				id;
 	int				nbr_eat;
@@ -40,7 +40,7 @@ typedef	struct		s_philo
 	struct s_info	*info;
 }					t_philo;
 
-typedef struct		s_info
+typedef struct s_info
 {
 	int				nbr_phil;
 	int				tmp_die;
@@ -56,17 +56,20 @@ typedef struct		s_info
 	t_state			state;
 }					t_info;
 
-
 //Resources
-int		ft_atoi(const char *str);
-int		ft_strlen(const char *s);
-int		ft_strcmp(char *str1, char *str2);
-int		ft_isdigit(int c);
+int			ft_atoi(const char *str);
+int			ft_strlen(const char *s);
+int			ft_strcmp(char *str1, char *str2);
+int			ft_isdigit(int c);
 long long	timestamp(void);
 
 //Argumemnt Checks
-int		check_arguments(char **arg, t_info *vars);
+int			check_arguments(char **arg, t_info *vars);
 
 //Thread Creation and Manipulation
-int		create_threads(t_info *vars);
+int			create_threads(t_info *vars);
+
+//Clean Programm
+void		exit_program(t_info *vars);
+
 #endif

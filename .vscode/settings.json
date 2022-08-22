@@ -1,0 +1,4 @@
+{
+	"makefile.extensionOutputFolder": "./.vscode",
+	"42norminette.command": "/var/data/python/bin/norminette"
+}

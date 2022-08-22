@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+         #
+#    By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/08/13 16:56:50 by mgranate_ls       #+#    #+#              #
-#    Updated: 2022/08/21 21:38:18 by mgranate_ls      ###   ########.fr        #
+#    Updated: 2022/08/22 14:46:52 by mgranate         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@ NAME = philo
 
 CC = gcc
 
-FLAGS = -Wall -Wextra -Werror -pthread -fsanitize=address
+FLAGS = -Wall -Wextra -Werror -pthread #-fsanitize=thread
 
 SRC =	main.c \
 		validate_arguments.c \
