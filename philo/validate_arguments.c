@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   validate_arguments.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/17 14:31:58 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/22 15:13:38 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/25 12:01:28 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,4 @@ int	check_arguments(char **arg, t_info *vars)
 		if (!(vars->nbr_eat = ft_atoi(arg[5])))
 			return (0);
 	return (1);
-}
-
-void	exit_program(t_info *vars)
-{
-	if (vars->philo)
-		free(vars->philo);
 }

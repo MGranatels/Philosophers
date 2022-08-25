@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/22 15:11:32 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/25 11:28:53 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ typedef struct s_philo
 	long long		t_last_meal;
 	int				l_fork;
 	int				r_fork;
-	pthread_mutex_t	eat_ex;
+	pthread_mutex_t	mutex;
 	pthread_t		thread;
 	struct s_info	*info;
 }					t_philo;
