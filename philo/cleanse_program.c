@@ -6,15 +6,40 @@
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 11:58:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/25 12:34:47 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 03:51:05 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	check_philo_died(t_info info)
+int	check_philo_died(t_info *info, t_philo *philo)
 {
+	int			i;
+	int 		dif;
+	long long 	time;
 	
+    time = timestamp();
+    dif = time - info->first_timestamp;
+	if (!check_dead(info))
+		return (0);
+	i = time - philo->t_last_meal;
+	if (i > info->tmp_die)
+	{
+		info->dead = 1;
+		printf("%d %d dead\n", dif, philo->id);
+		return (0);
+	}
+	return (1);
+}
+
+int	check_dead(t_info *info)
+{
+	int	j;
+
+	j = -1;
+	while (++j < info->nbr_phil)
+		if (info->philo[j].info->dead == 1)
+			return (0);
 	return (1);
 }
 

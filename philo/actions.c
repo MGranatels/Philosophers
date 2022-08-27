@@ -1,28 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main.c                                             :+:      :+:    :+:   */
+/*   actions.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/13 17:02:46 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 02:26:07 by mgranate_ls      ###   ########.fr       */
+/*   Created: 2022/08/27 02:44:35 by mgranate_ls       #+#    #+#             */
+/*   Updated: 2022/08/27 03:46:08 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "philo.h"
 
-int	main(int ac, char **av)
+int    print_action(t_info *info, t_philo *philo, char *string)
 {
-	static t_info	vars;
+    long long   time;
+    int         dif;
+    int         j;
 
-	if (ac == 5 || ac == 6)
-	{
-		if (!check_arguments(av, &vars))
+    j = -1;
+    time = timestamp();
+    pthread_mutex_lock(&info->print_ex);
+    dif = time - info->first_timestamp;
+    while (++j < info->nbr_phil)
+		if (info->philo[j].info->dead == 1)
 			return (0);
-		create_threads(&vars);
-		exit_program(&vars);
-		//check_philo_died(&vars);
-	}
-	return (0);
+    printf("%d %d %s\n", dif, philo->id, string);
+    pthread_mutex_unlock(&info->print_ex);
+    return (1);
 }

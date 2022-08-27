@@ -6,7 +6,7 @@
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/25 11:28:53 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 03:39:01 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,5 +71,10 @@ int			create_threads(t_info *vars);
 
 //Clean Programm
 void		exit_program(t_info *vars);
+int			check_philo_died(t_info *info, t_philo *philo);
+int			check_dead(t_info *info);
+
+//Print Actions
+int    print_action(t_info *info, t_philo *philo, char *string);
 
 #endif
