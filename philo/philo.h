@@ -6,7 +6,7 @@
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 03:39:01 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 16:11:26 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ typedef struct s_info
 	int				dead;
 	int				all_ate;
 	long long		first_timestamp;
-	pthread_mutex_t	print_ex;
+	pthread_mutex_t	main;
 	pthread_mutex_t	start_ex;
 	t_philo			*philo;
 	t_state			state;
@@ -68,6 +68,8 @@ int			check_arguments(char **arg, t_info *vars);
 
 //Thread Creation and Manipulation
 int			create_threads(t_info *vars);
+void		*rotine(void *arg);
+
 
 //Clean Programm
 void		exit_program(t_info *vars);

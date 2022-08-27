@@ -6,7 +6,7 @@
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:31:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 03:48:27 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 16:18:21 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,9 @@ void	*rotine(void *arg)
 	philo->t_last_meal = timestamp();
 	while (1)
 	{
-		pthread_mutex_lock(&philo->mutex);
 		if (!check_philo_died(info, philo))
 			return (0);
-		pthread_mutex_unlock(&philo->mutex);
-		pthread_mutex_lock(&philo->mutex);
 		print_action(info, philo, "sleep");
-		pthread_mutex_unlock(&philo->mutex);
 	}
 	return (NULL);
 }
@@ -59,10 +55,6 @@ void	iniciate_philo(t_info *vars)
 		vars->philo[i].info->dead = 0;
 	}
 	vars->philo[0].l_fork = vars->nbr_phil;
-	i = vars->nbr_phil;
-	while (--i >= 0)
-		pthread_create(&(vars->philo[i].thread), NULL,
-			&rotine, &vars->philo[i]);
 	vars->philo[vars->nbr_phil - 1].r_fork = vars->nbr_phil;
 }
 

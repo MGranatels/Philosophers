@@ -6,7 +6,7 @@
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 11:58:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 03:51:05 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 16:35:28 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,8 @@ int	check_philo_died(t_info *info, t_philo *philo)
 	long long 	time;
 	
     time = timestamp();
-    dif = time - info->first_timestamp;
+    pthread_mutex_lock(&philo->mutex);
+	dif = time - info->first_timestamp;
 	if (!check_dead(info))
 		return (0);
 	i = time - philo->t_last_meal;
@@ -29,6 +30,7 @@ int	check_philo_died(t_info *info, t_philo *philo)
 		printf("%d %d dead\n", dif, philo->id);
 		return (0);
 	}
+    pthread_mutex_unlock(&philo->mutex);
 	return (1);
 }
 
@@ -47,9 +49,9 @@ void	exit_program(t_info *vars)
 {
     int i;
 
-    i = vars->nbr_phil;
+    //i = vars->nbr_phil;
 	while (--i >= 0)
-		pthread_join(vars->philo[i].thread, NULL);
+		pthread_detach(vars->philo[i].thread);
     i = vars->nbr_phil;
 	while (--i >= 0)
 		pthread_mutex_destroy(&vars->philo[i].mutex);
