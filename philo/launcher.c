@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launcher.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:31:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 16:18:21 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 17:42:23 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,20 +16,19 @@ void	*rotine(void *arg)
 {
 	t_philo	*philo;
 	t_info	*info;
-	int		count;
 	long long var;
 	
-	count = 0;
 	philo = arg;
 	info = philo->info;
 	if (!(philo->id % 2))
 		usleep(15000);
-	philo->t_last_meal = timestamp();
-	while (1)
+	while (!(info->dead))
 	{
-		if (!check_philo_died(info, philo))
-			return (0);
-		print_action(info, philo, "sleep");
+		print_selection(info, philo);
+		if (info->all_ate)
+			break ;
+		print_action(info, philo, "is sleeping");
+		print_action(info, philo, "is thinking");
 	}
 	return (NULL);
 }

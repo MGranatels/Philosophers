@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 16:11:26 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2022/08/27 18:03:04 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ typedef struct s_info
 	int				all_ate;
 	long long		first_timestamp;
 	pthread_mutex_t	main;
-	pthread_mutex_t	start_ex;
+	pthread_mutex_t	forks[250];
 	t_philo			*philo;
 	t_state			state;
 }					t_info;
@@ -69,6 +69,7 @@ int			check_arguments(char **arg, t_info *vars);
 //Thread Creation and Manipulation
 int			create_threads(t_info *vars);
 void		*rotine(void *arg);
+void		accounting_time(int	act, t_info *info);
 
 
 //Clean Programm
@@ -77,6 +78,7 @@ int			check_philo_died(t_info *info, t_philo *philo);
 int			check_dead(t_info *info);
 
 //Print Actions
-int    print_action(t_info *info, t_philo *philo, char *string);
+int   	print_action(t_info *info, t_philo *philo, char *string);
+int		print_selection (t_info *info, t_philo *philo);
 
 #endif
