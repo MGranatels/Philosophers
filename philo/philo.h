@@ -6,7 +6,7 @@
 /*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 18:03:04 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/29 14:58:16 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,15 +18,6 @@
 # include <unistd.h>
 # include <sys/time.h>
 # include <stdio.h>
-
-typedef enum e_state
-{
-	EATING,
-	SLEEPING,
-	THINKING,
-	RUNNING,
-	FINISHED
-}					t_state;
 
 typedef struct s_philo
 {
@@ -53,7 +44,6 @@ typedef struct s_info
 	pthread_mutex_t	main;
 	pthread_mutex_t	forks[250];
 	t_philo			*philo;
-	t_state			state;
 }					t_info;
 
 //Resources

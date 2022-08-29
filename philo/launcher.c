@@ -6,7 +6,7 @@
 /*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:31:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/27 17:42:23 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/29 18:10:58 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,15 +20,16 @@ void	*rotine(void *arg)
 	
 	philo = arg;
 	info = philo->info;
-	if (!(philo->id % 2))
-		usleep(15000);
+	// if (!(philo->id % 2))
+	usleep(1000000);
 	while (!(info->dead))
 	{
+		check_philo_died(info, philo);
 		print_selection(info, philo);
 		if (info->all_ate)
 			break ;
-		print_action(info, philo, "is sleeping");
-		print_action(info, philo, "is thinking");
+		//print_action(info, philo, "is sleeping");
+		//print_action(info, philo, "is thinking");
 	}
 	return (NULL);
 }
