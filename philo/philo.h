@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   philo.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/13 17:01:23 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/29 14:58:16 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:25:33 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int			check_arguments(char **arg, t_info *vars);
 //Thread Creation and Manipulation
 int			create_threads(t_info *vars);
 void		*rotine(void *arg);
-void		accounting_time(int	act, t_info *info);
+void		accounting_tim2e(int	act, t_info *info);
 
 
 //Clean Programm

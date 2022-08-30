@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   launcher.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/21 16:31:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/29 18:10:58 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:25:57 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,16 @@ void	*rotine(void *arg)
 	
 	philo = arg;
 	info = philo->info;
-	// if (!(philo->id % 2))
-	usleep(1000000);
-	while (!(info->dead))
+	if (!(philo->id % 2))
+		usleep(info->tmp_eat*1000);
+	while (info->dead == 0)
 	{
 		check_philo_died(info, philo);
 		print_selection(info, philo);
-		if (info->all_ate)
-			break ;
-		//print_action(info, philo, "is sleeping");
-		//print_action(info, philo, "is thinking");
+		usleep(info->tmp_sleep*1000);
+		pthread_mutex_lock(&philo->mutex);
+		print_action(info, philo, "is thinking");
+		pthread_mutex_unlock(&philo->mutex);
 	}
 	return (NULL);
 }

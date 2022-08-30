@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cleanse_program.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
+/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/08/25 11:58:53 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2022/08/29 18:10:01 by mgranate         ###   ########.fr       */
+/*   Updated: 2022/08/30 12:25:52 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ int	check_philo_died(t_info *info, t_philo *philo)
 	if (!check_dead(info))
 		return (0);
 	i = dif - philo->t_last_meal;
-	printf("i = %d\n", i);
 	if (i > info->tmp_die)
 	{
     	pthread_mutex_lock(&philo->mutex);
