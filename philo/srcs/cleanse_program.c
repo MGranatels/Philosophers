@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   cleanse_program.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
+/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 01:20:02 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2023/02/07 00:18:33 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2023/02/14 12:43:58 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,8 @@ int	exit_free(t_info **info, t_philo **philo, int status, char *error)
 	}
 	if (philo && *philo)
 	{
-		if (&(*philo)->death->death)
-			pthread_mutex_destroy(&(*philo)->death->death);
-		if ((*philo)->print)
-			pthread_mutex_destroy((*philo)->print);
+		pthread_mutex_destroy(&(*philo)->death->death);
+		pthread_mutex_destroy((*philo)->print);
 		free(*philo);
 	}
 	return (0);

@@ -15,6 +15,7 @@
 int	check_death(t_philo *p)
 {
 	int	death;
+
 	pthread_mutex_lock(&p->death->death);
 	death = p->death->is_death;
 	pthread_mutex_unlock(&p->death->death);
@@ -34,5 +35,5 @@ int	is_dead(t_philo *p)
 		pthread_mutex_unlock(&p->death->death);
 		return (1);
 	}
-	return (0);		
+	return (0);
 }

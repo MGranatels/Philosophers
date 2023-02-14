@@ -1,4 +1,16 @@
-#ifndef	 PHILO_H
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   philo.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/02/14 11:27:10 by mgranate          #+#    #+#             */
+/*   Updated: 2023/02/14 12:42:11 by mgranate         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#ifndef PHILO_H
 # define PHILO_H
 
 # include <pthread.h>
@@ -48,11 +60,11 @@ struct s_philo
 	t_data			data;
 };
 
-
 //Iniciate Data Struct
-t_info	*init_info(t_data *data);
-t_death	*init_death(void);
-t_philo	*init_philo(t_data *data, t_info **info, t_death *death);
+t_info		*init_info(t_data *data);
+t_death		*init_death(void);
+t_philo		*init_philo(t_data *data, t_info **info, t_death *death);
+t_data		init_data(int ac, char **av);
 
 //Resources
 int			ft_atoi(const char *str);
@@ -66,14 +78,13 @@ long long	timestamp(void);
 long long	time_diff(long long start, long long l_ac);
 
 //Argumemnt Checks
-int			check_arguments(char **arg, t_data *data);
+int			check_arguments(char **av);
 int			exit_free(t_info **info, t_philo **philo, int status, char *error);
-
 
 //Thread Creation and Manipulation
 int			create_threads(t_philo **philo);
 int			is_dead(t_philo *p);
-void		accounting_tim2e(int	act, t_info *info);
+void		accounting_tim2e(int act, t_info *info);
 
 //Actions
 int			eat(t_philo *p);

@@ -10,7 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #include <philo.h>
 
 int	ft_isspace(char c)
@@ -48,7 +47,7 @@ int	ft_atoi(const char *str)
 	return (res * n);
 }
 
-int ft_strlen(const char *s)
+int	ft_strlen(const char *s)
 {
 	int	i;
 

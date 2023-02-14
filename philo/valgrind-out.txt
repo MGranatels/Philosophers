@@ -1,0 +1,105 @@
+==893192== Memcheck, a memory error detector
+==893192== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==893192== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==893192== Command: ./philo
+==893192== Parent PID: 893166
+==893192== 
+==893192== Warning: set address range perms: large range [0x7b0000000000, 0x7c0000003000) (noaccess)
+==893192== 
+==893192== Process terminating with default action of signal 1 (SIGHUP)
+==893192==    at 0x4874505: futex_wake (futex-internal.h:364)
+==893192==    by 0x4874505: __pthread_once_slow (pthread_once.c:127)
+==893192==    by 0x49E0B1A: _dlerror_run (dlerror.c:136)
+==893192==    by 0x49E0524: dlsym (dlsym.c:70)
+==893192==    by 0x495D13: __interception::InterceptFunction(char const*, unsigned long*, unsigned long, unsigned long) (in /nfs/homes/mgranate/Desktop/Philosophers/philo/philo)
+==893192==    by 0x45F0AD: InitializeCommonInterceptors() (in /nfs/homes/mgranate/Desktop/Philosophers/philo/philo)
+==893192==    by 0x45E11B: __tsan::InitializeInterceptors() (in /nfs/homes/mgranate/Desktop/Philosophers/philo/philo)
+==893192==    by 0x47FD9B: __tsan::Initialize(__tsan::ThreadState*) (in /nfs/homes/mgranate/Desktop/Philosophers/philo/philo)
+==893192==    by 0x4011CF5: _dl_init (dl-init.c:104)
+==893192==    by 0x4001139: ??? (in /usr/lib/x86_64-linux-gnu/ld-2.31.so)
+==893192== 
+==893192== FILE DESCRIPTORS: 25 open at exit.
+==893192== Open file descriptor 103: /usr/share/code/v8_context_snapshot.bin
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 54: /usr/share/code/resources/app/node_modules.asar
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 52: /nfs/homes/mgranate/.config/Code/logs/20230214T105913/ptyhost.log
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 49: /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 48: /usr/share/code/resources/app/node_modules.asar
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 47: /dev/shm/.org.chromium.Chromium.z3aNWM (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 46: /dev/shm/.org.chromium.Chromium.PjgtmN (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 45: /dev/shm/.org.chromium.Chromium.XJyCZL (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 44: /dev/shm/.org.chromium.Chromium.Mp1IrT (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 43: /dev/shm/.org.chromium.Chromium.XfPNvU (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 42: /dev/shm/.org.chromium.Chromium.JFbQbQ (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 41: /dev/shm/.org.chromium.Chromium.mGHS8Q (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 40: /dev/shm/.org.chromium.Chromium.Es0zdU (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open AF_UNIX socket 39: <unknown>
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 34: /tmp/.org.chromium.Chromium.T9LDFK (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 33: /proc/878548/status
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 32: /nfs/homes/mgranate/.config/Code/Dictionaries/en-US-10-1.bdic
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 31: /dev/shm/.org.chromium.Chromium.J57cdT (deleted)
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 30: /proc/878548/statm
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open AF_UNIX socket 27: <unknown>
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 20: /usr/share/code/v8_context_snapshot.bin
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 3: /nfs/homes/mgranate/Desktop/Philosophers/philo/valgrind-out.txt
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 2: /dev/pts/1
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 1: /dev/pts/1
+==893192==    <inherited from parent>
+==893192== 
+==893192== Open file descriptor 0: /dev/pts/1
+==893192==    <inherited from parent>
+==893192== 
+==893192== 
+==893192== HEAP SUMMARY:
+==893192==     in use at exit: 0 bytes in 0 blocks
+==893192==   total heap usage: 0 allocs, 0 frees, 0 bytes allocated
+==893192== 
+==893192== All heap blocks were freed -- no leaks are possible
+==893192== 
+==893192== For lists of detected and suppressed errors, rerun with: -s
+==893192== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
