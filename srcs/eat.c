@@ -6,7 +6,7 @@
 /*   By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/12 13:12:00 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2023/02/12 13:36:15 by mgranate_ls      ###   ########.fr       */
+/*   Updated: 2023/02/14 09:23:51 by mgranate_ls      ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,7 @@ int	eat(t_philo *p)
 	print_two_message(p);
 	p->nbr_time_ate++;
 	p->t_last_meal = timestamp();
+	sleep_action(p->data.tmp_eat, p);
 	putting_fork(p, first);
 	putting_fork(p, second);
 	return (0);

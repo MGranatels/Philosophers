@@ -6,7 +6,7 @@
 #    By: mgranate_ls <mgranate_ls@student.42.fr>    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/05 00:24:53 by mgranate_ls       #+#    #+#              #
-#    Updated: 2023/02/12 14:07:43 by mgranate_ls      ###   ########.fr        #
+#    Updated: 2023/02/14 09:24:49 by mgranate_ls      ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -33,7 +33,7 @@ INC			=	includes/
 
 CC			=	cc
 
-CFLAGS		=	-Wall -Wextra -Werror -g -I$(INC) -pthread #-fsanitize=thread
+CFLAGS		=	-Wall -Wextra -Werror -g -I$(INC) -pthread -fsanitize=thread
 
 RM			=	rm -rf
 

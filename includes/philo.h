@@ -77,6 +77,7 @@ void		accounting_tim2e(int	act, t_info *info);
 
 //Actions
 int			eat(t_philo *p);
+int			sleep_action(long long action, t_philo *p);
 
 //Death Checker
 int			check_death(t_philo *p);
