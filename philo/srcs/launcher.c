@@ -6,7 +6,7 @@
 /*   By: mgranate <mgranate@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/05 02:56:40 by mgranate_ls       #+#    #+#             */
-/*   Updated: 2023/02/14 11:37:32 by mgranate         ###   ########.fr       */
+/*   Updated: 2023/02/15 18:14:43 by mgranate         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ int	sleep_action(long long action, t_philo *p)
 	{
 		if (check_death(p))
 			return (1);
-		usleep(100);
 		passed = time_diff(begin, timestamp());
 	}
 	return (passed >= action);
